@@ -1,0 +1,86 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+.header img {
+  width: 200px;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+}
+nav a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s;
+}
+nav a:hover {
+  background-color: #575757;
+}
+.main-title {
+  text-align: center;
+  padding: 50px 0;
+  font-size: 30px;
+}
+.group-about {
+  text-align: center;
+  padding: 20px;
+}
+.member {
+  padding: 50px 20px;
+  text-align: center;
+}
+.member-about-title {
+  font-size: 30px;
+  padding-bottom: 20px;
+}
+.member-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.member-item {
+  margin: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+.member-item img {
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+  transition: transform 0.3s;
+}
+.member-item img:hover {
+  transform: scale(1.1);
+}
+.member-item span {
+  display: block;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.view-all-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 15px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+  color: black;
+  margin-top: 20px;
+}
+.view-all-button:hover {
+  background-color: #f0f0f0;
+}
