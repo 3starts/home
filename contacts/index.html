@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+    <link rel="icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="3startの公式ホームページです。メンバー情報や、3startの詳細について載っています。">
+    <title>3start | お問い合わせ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .header {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-color: #f8f8f8;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        .header img {
+            width: 200px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            opacity: 0;
+            animation: fadeIn 1s 1s forwards;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+            }
+        }
+        #logo-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 1;
+            transition: opacity 0.5s;
+        }
+        #logo-overlay.hidden {
+            animation: fadeOut 1s forwards;
+        }
+        #logo-overlay img {
+            width: 200px;
+            animation: zoomIn 2s forwards;
+        }
+        @keyframes zoomIn {
+            from {
+                transform: scale(1.5);
+            }
+            to {
+                transform: scale(1.53);
+            }
+        }
+        .main-display {
+            padding: 50px 20px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1s 2.5s forwards;
+        }
+        .main-about-title {
+            font-size: 30px;
+            padding-bottom: 20px;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form label {
+            display: block;
+            margin: 15px 0 5px;
+            font-size: 16px;
+            color: #333;
+        }
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 98%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .contact-form textarea {
+            resize: none;
+            height: 250px;
+        }
+        .contact-form input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .contact-form input[type="submit"]:hover {
+            background-color: #575757;
+        }
+        .contact-form .radio-group {
+            margin: 15px 0;
+        }
+        .contact-form .radio-group label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .contact-form .radio-group input[type="radio"] {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="logo-overlay">
+        <img src="3start-3.png" alt="3start">
+    </div>
+    <header class="header">
+        <img src="3start-3.png" alt="3start">
+    </header>
+    <nav>
+        <a href="https://3starts.github.io/home">ホーム</a>
+        <a href="https://3starts.github.io/member">メンバー</a>
+        <a href="https://3starts.github.io/news">ニュース</a>
+        <a href="https://3starts.github.io/contacts">お問い合わせ</a>
+    </nav>
+    <div class="main-display">
+        <p class="main-about-title">お問い合わせ</p>
+        <div class="contact-form">
+            <form action="https://formspree.io/f/xblrowzd" method="POST">
+                <label for="name">名前</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">メールアドレス</label>
+                <input type="email" id="email" name="email" required>
+
+                <div class="radio-group">
+                    <label>お問い合わせ種別:</label>
+                    <label><input type="radio" name="type" value="個人" required> 個人</label>
+                    <label><input type="radio" name="type" value="企業"> 企業</label>
+                </div>
+                
+                <label for="message">メッセージ</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <input type="submit" value="送信">
+            </form>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', function() {
+            const logoOverlay = document.getElementById('logo-overlay');
+            setTimeout(() => {
+                logoOverlay.classList.add('hidden');
+                setTimeout(() => {
+                    logoOverlay.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 1000); // フェードアウトアニメーションが終わるまでの遅延時間
+            }, 3000); // 3秒後にロゴがフェードアウトします
+        });
+    </script>
+</body>
+</html>
