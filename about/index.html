@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+    <link rel="icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="3startの公式ホームページです。3startとは計16人で構成されているYouTuberグループです。">
+    <meta name="keywords" content="3start,さんすた,sansuta">
+    <meta property="og:title" content="3START">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@100..900&family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+    <title>3startとは？ | 3start</title>
+    <style>
+        html,body {
+            font-family: Sawarabi Gothic;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+        .header {
+            display: flex;
+            justify-content: center; /* ロゴを中央寄せ */
+            align-items: center; /* ロゴを縦方向に中央寄せ */
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        .sawarabi-gothic-regular {
+            font-family: "Sawarabi Gothic", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .header img {
+            width: 200px;
+        }
+        nav {
+            display: block;
+            display: flex;
+            justify-content: center;
+            background-color: #fff;
+            opacity: 0;
+            animation: fadeIn 1s 1s forwards;
+        }
+        nav a {
+            color: black;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        nav a:hover {
+            background-color: #a9a9a9;
+        }
+        .main-display {
+            padding: 50px 20px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 0.5s 0.1s forwards;
+            margin-bottom: 20px;
+        }
+        .main-display a:hover{
+            color: rgb(135, 135, 255);
+        }
+        .about-title {
+            font-size: 30px;
+            padding-bottom: 20px;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        footer {
+            background-color: #404040;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            padding-top: 10px;
+            color: white;
+        }
+        footer a {
+            color: white;
+            margin-right: 5px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        footer a:hover {
+            color: #dcdcdc;
+            text-decoration: underline;
+        }
+        footer img {
+            width: 120px;
+            margin-top: 10px;
+        }
+        .live-about .about-title{
+            margin-top: 130px;
+        }
+        .live-about img {
+            width: 400px;
+        }
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            z-index: 1002;
+        }
+        .hamburger-menu div {
+            width: 100%;
+            height: 4px;
+            background-color: black;
+            transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+        }
+        .hamburger-menu.open div {
+            background-color: black;
+        }
+        .hamburger-menu.open div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger-menu.open div:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-menu.open div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        .menu-content {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f0f0f0;
+            z-index: 1001;
+            opacity: 0;
+            animation: fadeOut 0.5s forwards;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .menu-content a {
+            color: black;
+            font-size: 40px;
+            text-decoration: none;
+            margin: 5px 0;
+            padding: 15px;
+            border-radius: 100px;
+        }
+        .menu-content a:hover {
+            background-color: #dcdcdc;
+        }
+        .menu-content.show {
+            display: flex;
+            animation: fadeIn 0.5s forwards;
+            opacity: 0;
+        }
+        .member-all-button {
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 30px;
+            background-color: #fff;
+            border: 1px solid rgb(0, 200, 255);
+            cursor: pointer;
+            transition: background-color 0.5s;
+            text-decoration: none;
+            color: rgb(0, 200, 255);
+            margin-top: 20px;
+        }
+        .member-all-button:hover {
+            background-color: rgb(0, 200, 255);
+            color: #fff;
+        }
+        .official-channel-view {
+            margin-top: 130px;
+        }
+        .official-channel-view button {
+            background-color: #696969;
+            color: #fff;
+            border: solid 1px;
+            border-radius: 30px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .official-channel-view button:hover {
+            background-color: #fff;
+            color: #000;
+        }
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            .header {
+                display: flex;
+                justify-content: space-between;
+                background-color: #fff;
+                opacity: 0;
+                animation: fadeIn 1s forwards;
+            }
+            .hamburger-menu {
+                display: flex;
+            }
+            .member-all-button {
+                display: inline-block;
+                padding: 10px 15px;
+                border-radius: 5px;
+                background-color: #fff;
+                border: 1px solid #696969;
+                cursor: pointer;
+                transition: background-color 0.5s;
+                text-decoration: none;
+                color: #696969;
+                margin-top: 20px;
+            }
+            .member-all-button:hover {
+                background-color: #696969;
+                color: #fff;
+            }
+            .official-channel-view button {
+                display: inline-block;
+                padding: 10px 15px;
+                border-radius: 5px;
+                background-color: #fff;
+                border: 1px solid #696969;
+                cursor: pointer;
+                transition: background-color 0.5s;
+                text-decoration: none;
+                color: #696969;
+                margin-top: 20px;
+        }
+        .official-channel-view button:hover {
+            background-color: #696969;
+            color: #fff;
+        }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="https://3starts.com">
+            <img src="3start-3.png" alt="3start">
+        </a>
+        <div id="hamburger-menu" class="hamburger-menu" title="ナビゲーションメニュー">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+    <nav>
+        <a href="https://3starts.com">TOP</a>
+        <a href="https://3starts.com/about">ABOUT</a>
+        <a href="https://3starts.com/member">MEMBER</a>
+        <a href="https://3starts.com/news">NEWS</a>
+        <a href="https://3starts.com/contacts">CONTACTS</a>
+    </nav>
+    <div id="menu-content" class="menu-content">
+        <a href="https://3starts.com">TOP</a>
+        <a href="https://3starts.com/about"  style="background-color: #dcdcdc;">ABOUT</a>
+        <a href="https://3starts.com/member">MEMBER</a>
+        <a href="https://3starts.com/news">NEWS</a>
+        <a href="https://3starts.com/contacts">CONTACTS</a>
+    </div>
+    <div class="main-display">
+        <p class="about-title">3startとは？</p>
+        <p class="about-text">3startとは、計16人で構成されている、YouTuberグループです。</p>
+        <button class="member-all-button"><a href="https://3starts.com/member"></a>メンバー一覧を見る</button>
+        <div class="live-about">
+            <p class="about-title">ライブ配信</p>
+            <figure class="live-image"><img src="sannsuta.png" alt=""></figure>
+            <p class="live-text">ライブ配信では、雑談やゲームを中心に配信していきます。</p>
+        </div>
+        <div class="official-channel-view">
+            <p class="about-title">公式チャンネルを見てみよう</p>
+            <a href="https://youtube.com/@3start-group"><button class="channel-view-b">さんすた公式YouTubeチャンネル</button></a>
+        </div>
+    </div>
+    <footer>
+        <img src="sansuta.png" alt="3start Logo">
+        <p>&copy; 2024 3start Group.</p>
+        <p>このサイトに掲載されているイラスト、画像等の無断複写・転載を禁じます。</p>
+        <div class="sns-link">
+            <a href="https://www.youtube.com/@3start-group">YouTube</a>
+            <a href="https://x.com/@3start_official">X(旧Twitter)</a>
+            <a href="https://www.instagram.com/3start_group">Instagram</a>
+            <a href="https://www.tiktok.com/@3start-group">TikTok</a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var hamburgerMenu = document.getElementById("hamburger-menu");
+            var menuContent = document.getElementById("menu-content");
+
+            hamburgerMenu.addEventListener("click", function () {
+                this.classList.toggle("open");
+                menuContent.classList.toggle("show");
+            });
+
+            window.addEventListener("resize", function () {
+                if (window.innerWidth > 768) {
+                    menuContent.classList.remove("show");
+                    hamburgerMenu.classList.remove("open");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
