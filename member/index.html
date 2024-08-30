@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+    <link rel="icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="3startの公式ホームページです。3startとは、16人で構成されている、YouTuberグループです。">
+    <meta name="keywords" content="3start,さんすた,sansuta">
+    <meta property="og:title" content="3START">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@100..900&family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+    <title>メンバー | 3start</title>
+    <style>
+        html,body {
+            font-family: Sawarabi Gothic;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .header {
+            display: flex;
+            justify-content: center; /* ロゴを中央寄せ */
+            align-items: center; /* ロゴを縦方向に中央寄せ */
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        .sawarabi-gothic-regular {
+  font-family: "Sawarabi Gothic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+        .header img {
+            width: 200px;
+        }
+        nav {
+            display: block;
+            display: flex;
+            justify-content: center;
+            background-color: #fff;
+            opacity: 0;
+            animation: fadeIn 1s 1s forwards;
+        }
+        nav a {
+            color: black;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        nav a:hover {
+            background-color: #a9a9a9;
+        }
+        .main-display {
+            padding: 50px 20px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1s 2.5s forwards;
+            margin-bottom: 103px;
+        }
+        .main-display a:hover{
+            color: rgb(135, 135, 255);
+        }
+        .main-about-title {
+            font-size: 30px;
+            padding-bottom: 20px;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+            }
+        }
+        #logo-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 1;
+            transition: opacity 0.5s;
+        }
+        #logo-overlay.hidden {
+            animation: fadeOut 1s forwards;
+        }
+        #logo-overlay img {
+            width: 200px;
+            animation: zoomIn 2s forwards;
+        }
+        @keyframes zoomIn {
+            from {
+                transform: scale(1.5);
+            }
+            to {
+                transform: scale(1.53);
+            }
+        }
+        footer {
+            position: absolute;
+            bottom: 0;
+            background-color: #404040;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            padding-top: 10px;
+            color: white;
+        }
+        footer a {
+            color: white;
+            margin-right: 5px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        footer a:hover {
+            color: #dcdcdc;
+            text-decoration: underline;
+        }
+        footer img {
+            width: 120px;
+            margin-top: 10px;
+        }
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            z-index: 1002;
+        }
+        .hamburger-menu div {
+            width: 100%;
+            height: 4px;
+            background-color: black;
+            transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+        }
+        .hamburger-menu.open div {
+            background-color: black;
+        }
+        .hamburger-menu.open div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger-menu.open div:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-menu.open div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        .menu-content {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f0f0f0;
+            z-index: 1001;
+            opacity: 0;
+            animation: fadeOut 0.5s forwards;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .menu-content a {
+            color: black;
+            font-size: 40px;
+            text-decoration: none;
+            margin: 5px 0;
+            padding: 15px;
+            border-radius: 100px;
+        }
+        .menu-content a:hover {
+            background-color: #dcdcdc;
+        }
+        .menu-content.show {
+            display: flex;
+            animation: fadeIn 0.5s forwards;
+            opacity: 0;
+        }
+        .news-span {
+            background-color: red;
+            color: #fff;
+            margin-right: 10px;
+            padding: 5px;
+            border-radius: 20px;
+        }
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            .header {
+                display: flex;
+                justify-content: space-between;
+                background-color: #fff;
+                opacity: 0;
+                animation: fadeIn 1s forwards;
+            }
+            .hamburger-menu {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="logo-overlay">
+        <img src="3start-3.png" alt="3start">
+    </div>
+    <header class="header">
+        <a href="https://3starts.com">
+            <img src="3start-3.png" alt="3start">
+        </a>
+        <div id="hamburger-menu" class="hamburger-menu" title="ナビゲーションメニュー">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+    <nav>
+        <a href="https://3starts.com">TOP</a>
+        <a href="https://3starts.com/about">ABOUT</a>
+        <a href="https://3starts.com/member">MEMBER</a>
+        <a href="https://3starts.com/news">NEWS</a>
+        <a href="https://3starts.com/contacts">CONTACTS</a>
+    </nav>
+    <div id="menu-content" class="menu-content">
+        <a href="https://3starts.com">TOP</a>
+        <a href="https://3starts.com/about">ABOUT</a>
+        <a href="https://3starts.com/member" style="background-color: #dcdcdc;">MEMBER</a>
+        <a href="https://3starts.com/news">NEWS</a>
+        <a href="https://3starts.com/contacts">CONTACTS</a>
+    </div>
+    <div class="main-display">
+        <p class="main-about-title">公開準備中</p>
+        <p class="main-about-text">現在、公開を準備しております。準備が出来次第<a href="https://x.com/3start_official">公式X</a>でお知らせしますので、もうしばらくお待ちください。</p>
+    </div>
+    <footer>
+        <img src="sansuta.png" alt="3start Logo">
+        <p>&copy; 2024 3start Group.</p>
+        <p>このサイトに掲載されているイラスト、画像等の無断複写・転載を禁じます。</p>
+        <div class="sns-link">
+            <a href="https://www.youtube.com/@3start-group">YouTube</a>
+            <a href="https://x.com/@3start_official">X(旧Twitter)</a>
+            <a href="https://www.tiktok.com/@3start_group">TikTok</a>
+        </div>
+    </footer>
+    <script>
+        window.addEventListener('load', function() {
+            const logoOverlay = document.getElementById('logo-overlay');
+            setTimeout(() => {
+                logoOverlay.classList.add('hidden');
+                setTimeout(() => {
+                    logoOverlay.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 1000); // フェードアウトアニメーションが終わるまでの遅延時間
+            }, 3000); // 3秒後にロゴがフェードアウトします
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerMenu = document.getElementById('hamburger-menu');
+            const menuContent = document.getElementById('menu-content');
+
+            hamburgerMenu.addEventListener('click', function() {
+                const isOpen = menuContent.classList.contains('show');
+
+                if (isOpen) {
+                    menuContent.classList.remove('show');
+                    hamburgerMenu.classList.remove('open');
+                } else {
+                    menuContent.classList.add('show');
+                    hamburgerMenu.classList.add('open');
+                }
+            });
+
+            menuContent.addEventListener('click', function() {
+                menuContent.classList.remove('show');
+                hamburgerMenu.classList.remove('open');
+            });
+        });
+    </script>
+</body>
+</html>
