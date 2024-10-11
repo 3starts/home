@@ -4,7 +4,7 @@
     <link rel="icon" href="favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="3startの公式ホームページです。3startとは、16人で構成されている、YouTuberグループです。">
+    <meta name="description" content="3startの公式ホームページです。">
     <meta name="keywords" content="3start,さんすた,sansuta">
     <meta property="og:title" content="3START">
     <meta property="og:type" content="website">
@@ -18,7 +18,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            overflow: hidden;
+            overflow-x: hidden;
         }
         .header {
             display: flex;
@@ -111,7 +111,7 @@
             background-color: #404040;
             text-align: center;
             padding: 15px;
-            width: 100%;
+            width: auto;
             padding-top: 10px;
             color: white;
         }
@@ -195,6 +195,61 @@
             padding: 5px;
             border-radius: 20px;
         }
+        .member-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.member {
+    display: flex;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    align-items: center;
+    transition: transform 0.3s;
+    transition: all 0.15s;
+    cursor: pointer;
+}
+
+.member:hover {
+    background-color: #dcdcdc;
+}
+
+.member img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.member-info h2 {
+    margin-top: -5px;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.member-info p {
+    margin-top: -10px;
+    font-size: 16px;
+    color: #555;
+}
+.top-go{
+    background-color: #fff;
+    border: 1px  solid rgb(0, 183, 255);
+    padding: 13px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 40px;
+    margin-top: 50px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.top-go:hover {
+    background-color: rgb(0, 183, 255);
+    color: #fff;
+}
         @media (max-width: 768px) {
             nav {
                 display: none;
@@ -209,6 +264,19 @@
             .hamburger-menu {
                 display: flex;
             }
+            footer {
+                width: auto;
+            }
+            .member {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .member img {
+        margin-bottom: 15px;
+    }
+
         }
     </style>
 </head>
@@ -240,9 +308,103 @@
         <a href="https://3starts.com/news">NEWS</a>
         <a href="https://3starts.com/contacts">CONTACTS</a>
     </div>
+    <div id="top"></div>
     <div class="main-display">
-        <p class="main-about-title">公開準備中</p>
-        <p class="main-about-text">現在、公開を準備しております。準備が出来次第<a href="https://x.com/3start_official">公式X</a>でお知らせしますので、もうしばらくお待ちください。</p>
+        <h1 class="main-about-title">メンバー紹介</h1>
+        <div class="member-list">
+            <div class="member">
+                <img src="akari.jpg" alt="akari">
+                <div class="member-info">
+                    <h2>あかり</h2>
+                    <p>Akari</p>
+                </div>
+            </div>
+            <div class="member">
+                <img src="kaho.jpg" alt="kaho">
+                <div class="member-info">
+                    <h2>海夏かほ</h2>
+                    <p>Uminatsu Kaho</p>
+                </div>
+            </div>
+            <div class="member">
+                <img src="cloud.png" alt="cloud">
+                <div class="member-info">
+                    <h2>クラウド</h2>
+                    <p>Cloud</p>
+                </div>
+            </div>
+            <div class="member">
+                <img src="kenpi.png" alt="kenpi">
+                <div class="member-info">
+                    <h2>けんぴー</h2>
+                    <p>Kenpi</p>
+                </div>
+            </div>
+            <div class="member">
+                <img src="goriraking.png" alt="goriraking">
+                <div class="member-info">
+                    <h2>ゴリラキング</h2>
+                    <p>Gorilla King</p>
+                </div>
+            </div>
+            <div class="member">
+                <img src="sayumi.jpg" alt="sayumi">
+                <div class="member-info">
+                    <h2>さゆみ</h2>
+                    <p>Sayumi</p>
+                </div>
+            </div>
+            <div class="member">
+                <img src="shinana.png" alt="shinana">
+                <div class="member-info">
+                    <h2>シナナ</h2>
+                    <p>Shinana</p>
+                </div>
+            </div>
+            <div class="member">
+                <img src="nekomaru.jpg" alt="nekomaru">
+                <div class="member-info">
+                    <h2>ねこまる</h2>
+                    <p>Nekomaru</p>
+                </div>
+            </div>
+            <div class="member">
+                <img src="yajimarinon.jpg" alt="Yajimarinon">
+                <div class="member-info">
+                    <h2>矢島利音</h2>
+                    <p>Yajima Rinon</p>
+                </div>
+            </div>
+            <div class="member">
+                <img src="mimika.jpg" alt="mimika">
+                <div class="member-info">
+                    <h2>みみか</h2>
+                    <p>Mimika</p>
+                </div>
+            </div>
+            <div class="member">
+                <img src="riku.jpg" alt="riku">
+                <div class="member-info">
+                    <h2>リク</h2>
+                    <p>Riku</p>
+                </div>
+            </div>
+            <div class="member">
+                <img src="yufutama.jpg" alt="yufutama">
+                <div class="member-info">
+                    <h2>ゆふたま</h2>
+                    <p>Yufutama</p>
+                </div>
+            </div>
+            <div class="member">
+                <img src="raku.png" alt="raku">
+                <div class="member-info">
+                    <h2>ラク</h2>
+                    <p>Raku</p>
+                </div>
+            </div>
+        </div>
+        <a href="#top"><button class="top-go">↑ トップへ</button></a>
     </div>
     <footer>
         <img src="sansuta.png" alt="3start Logo">
