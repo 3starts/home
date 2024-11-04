@@ -13,10 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@100..900&family=Sawarabi+Gothic&display=swap" rel="stylesheet">
     <title>3start | ニュース</title>
     <style>
-        html,body {
-            overflow-x: hidden;
-        }
-        html {
+        body {
             font-family: Sawarabi Gothic;
             margin: 0;
             padding: 0;
@@ -197,6 +194,9 @@
             padding: 5px;
             border-radius: 20px;
         }
+        .body-s {
+            overflow-x: hidden;
+        }
         @media (max-width: 768px) {
             nav {
                 display: none;
@@ -214,7 +214,7 @@
         }
     </style>
 </head>
-<body>
+<body><div class="body-s">
     <div id="logo-overlay">
         <img src="3start-3.png" alt="3start">
     </div>
@@ -290,5 +290,5 @@
             });
         });
     </script>
-</body>
+</body></div>
 </html>
